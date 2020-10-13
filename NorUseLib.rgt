@@ -1,0 +1,176 @@
+;Normal Use Library,  very much a work in progress
+ESONew(){                     
+    SetTimer, Delay1, -25     
+    SetTimer, Delay2, -50     
+    SetTimer, Delay3, -75     
+    Return                    
+}                             
+ESO(){                        
+    Send e                    
+    SetTimer, HeavyMelee, 1100
+    SetTimer, MoveFor, 2400   
+    SetTimer, TurnRight, 5150 
+    return                    
+}                             
+Saryn(){                      
+    SetTimer, ability1, 540   
+    SetTimer, ability4, 11000 
+    return                    
+}                             
+Strophdeemer(){               
+    SetTimer, melee, 1200     
+    Sleep 700                 
+    SetTimer, ForAtk, 1200    
+    return                    
+}                             
+VentKids(){                   
+    Moving2()                 
+    Turning4()                
+    Jumping()                 
+}                             
+Octavia(){                    
+    settimer, Octavia1, -1000 
+    send 1                    
+    settimer, Octavia2, -3000 
+    send 2                    
+    settimer, Octavia3, -5000 
+    send 3                    
+    return                    
+}                             
+Khora(){                      
+    SetTimer, ability4, 30000 
+    send 4                    
+    SetTimer, energy, 124000  
+    send 6                    
+    SetTimer, ability1, 2800  
+    send 1                    
+    return                    
+}                             
+Chroma(){                     
+    SetTimer, ability3, 35000 
+    Send 3                    
+    return                    
+}                             
+Adaro(){                      
+    SetTimer, ability, 200    
+    send 2                    
+    Return                    
+}                             
+FiveSec(){                    
+    SetTimer, ability, 5000   
+    send 2                    
+    return                    
+}                             
+TenSec(){                     
+    SetTimer, ability, 10000  
+    send 2                    
+    return                    
+}                             
+Panthera(){                   
+    SetTimer, AltFire2, 10004 
+    return                    
+}                             
+Moving1(){                    
+    SetTimer, MoveFor, 1000   
+    send {w down}             
+    Return                    
+}                             
+Moving2(){                    
+    settimer, MoveRight, 1200 
+    return                    
+}                             
+Turning2(){                   
+    settimer, TurnRight, 720  
+    return                    
+}                             
+Turning4(){                   
+    settimer, TurnLeft, 480   
+    return                    
+}                             
+Jumping(){                    
+    SetTimer, jump, 144       
+    return                    
+}                             
+Shedu(){                      
+    SetTimer, shoot, 240      
+    return                    
+}                             
+Delay1:                       
+    SetTimer, Shoot, 300      
+    Return                    
+Delay2:                       
+    SetTimer, MoveFor, 5000   
+    Send {w down}             
+    Return                    
+Delay3:                       
+    SetTimer, TurnLeft, 1000  
+    Return                    
+Octavia1:                     
+    SetTimer, ability1, 35000 
+    return                    
+Octavia2:                     
+    SetTimer, ability2, 35000 
+    return                    
+Octavia3:                     
+    SetTimer, ability3, 35000 
+    return                    
+HeavyMelee:                   
+    Click, middle             
+    return                    
+AltFire2:                     
+    Click, middle, Down       
+    Return                    
+ability:                      
+    Send 2                    
+    Return                    
+melee:                        
+    Send e                    
+    Return                    
+Shoot:                        
+    Click, 3                  
+    Return                    
+ShootH:                       
+    Click, L, Down            
+    Return                    
+jump:                         
+    Send {space}              
+    return                    
+TurnRight:                    
+    MouseMove, 2, 0, , R      
+    return                    
+TurnLeft:                     
+    MouseMove, 2, 0, , R      
+    return                    
+MoveFor:                      
+    send {w down}             
+    return                    
+MoveRight:                    
+    send {d down}             
+    return                    
+MoveLeft:                     
+    send {a down}             
+    return                    
+ForAtk:                       
+    {                         
+    send {w down}             
+    send e                    
+    send {w up}               
+    }                         
+    return                    
+ability1:                     
+    send 1                    
+    return                    
+ability2:                     
+    send 2                    
+    return                    
+ability3:                     
+    send 3                    
+    return                    
+ability4:                     
+    send 4                    
+    return                    
+energy:                       
+    send 6                    
+    return                    
+check:                        
+msgbox, wtf!                  

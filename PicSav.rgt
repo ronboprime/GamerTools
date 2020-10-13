@@ -1,0 +1,30 @@
+;Picture Saver
+sleep 10
+
+!+p::picSav()
+
+picSav(){
+FormatTime, stamp ,  , dd MMM, at HH mm ss
+winget, cur, PID, A
+Run, C:\WINDOWS\system32\mspaint.exe
+sleep 250
+WinActivate, ahk_exe mspaint.exe
+sleep 100
+send ^v
+sleep 200
+send ^+x
+sleep 200
+send ^s
+sleep 200
+send %stamp%
+sleep 40
+send !f
+sleep 40
+send x
+sleep 40
+send {enter}
+sleep 40
+;WinActivate, ahk_PID cur 
+WinSet, Enable, , ahk_PID cur
+return
+}

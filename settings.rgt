@@ -1,0 +1,32 @@
+global Freq := 433
+global DurB := 500
+global Left0 := "WTB [Fulmination] 10p"
+global ModFreq := Freq
+global ModDurB := DurB
+global ModLeft0 := Left0
+
+F6::ListHotKeys
+
+F5:: 
+Gui, New
+Gui, Font, s18 cDefault, Comic Sans MS
+Gui, Add, Text, , Frequency in Hz
+Gui, Add, Edit, vFreq, %ModFreq%
+Gui, Add, Text, , Duration in Ms
+Gui, Add, Edit, vDurB, %ModDurB%
+Gui, Add, Text, , Current string tied to Left Control Zero
+Gui, Add, Edit, vLeft0, %ModLeft0%
+Gui, Add, Button, default w80, OK
+Gui, Add, Button, w80, cancel
+Gui, Show, Autosize Center, Options
+return
+
+ButtonOK:
+gui, submit
+ButtonCancel:
+gui hide
+return
+ 
+/*
+need to figure out how to automate this process, and have shit named out like enumeration. read MOAR!
+*/
