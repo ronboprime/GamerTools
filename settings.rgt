@@ -1,9 +1,9 @@
 global Freq := 433
 global DurB := 500
-global Left0 := "WTB [Fulmination] 10p"
+global Right0 := "WTB [Fulmination] 10p"
 global ModFreq := Freq
 global ModDurB := DurB
-global ModLeft0 := Left0
+global ModRight0 := Right0
 
 F6::ListHotKeys
 
@@ -14,8 +14,8 @@ Gui, Add, Text, , Frequency in Hz
 Gui, Add, Edit, vFreq, %ModFreq%
 Gui, Add, Text, , Duration in Ms
 Gui, Add, Edit, vDurB, %ModDurB%
-Gui, Add, Text, , Current string tied to Left Control Zero
-Gui, Add, Edit, vLeft0, %ModLeft0%
+Gui, Add, Text, , Current string tied to Right Control Zero
+Gui, Add, Edit, vRight0, %ModRight0%
 Gui, Add, Button, default w80, OK
 Gui, Add, Button, w80, cancel
 Gui, Show, Autosize Center, Options

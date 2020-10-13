@@ -9,18 +9,18 @@ SendMode Input
 
 F1::Reload
 
->^Numpad0::ESONew()
->^Numpad1::StrophDeemer()
->^Numpad2::Panthera()
->^Numpad3::ESONew()
->^Numpad4::Chroma()
->^Numpad5::Khora()
->^Numpad6::Saryn()
->^Numpad7::Adaro()
->^Numpad8::FiveSec()
->^Numpad9::TenSec()
+<^Numpad0::ESONew()
+<^Numpad1::StrophDeemer()
+<^Numpad2::Panthera()
+<^Numpad3::ESONew()
+<^Numpad4::Chroma()
+<^Numpad5::Khora()
+<^Numpad6::Saryn()
+<^Numpad7::Adaro()
+<^Numpad8::FiveSec()
+<^Numpad9::TenSec()
 
-<^Numpad0::Send %Left0%
+>^Numpad0::Send %Right0%
 
 F2::
 loop 8
@@ -29,6 +29,8 @@ SoundBeep, %Freq%, %DurB%
 }
 
 Return
+
+F3::Help()
 
 Help(){
 MsgBox, 0=Octavia`n1= stropha`n2= panthera`n3= ESONew`n4= Nidus`n5= Khora `n6= Saryn`n7= adaro`n8= 5sec`n9= 10sec
