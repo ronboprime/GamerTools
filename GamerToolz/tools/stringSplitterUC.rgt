@@ -1,0 +1,107 @@
+#warn
+#singleinstance force 
+SetWorkingDir A_ScriptDir
+global name := 0 
+global vos := 10
+global hos := 220
+global rc := 0
+global feed := 0
+global line := 0
+global sender := 0
+
+//under construction
+
+F1::Reload
+
+F2::
+loop 5
+{
+feed := FileOpen("C:\Users\RonPa\Desktop\WFRelated\codez\QueueRLs.txt", "r")
+line := feed.ReadLine()
+TestString := line
+word_array := StrSplit(TestString," ")
+MsgBox % "The 1st word is " word_array[1] ". the third is " word_array[3]
+template := % "Gui, Add, CheckBox, x10 y" . vos " w200 h40, " . word_array[1]
+MsgBox template
+vos += 50
+rc++
+MsgBox template
+vos += 50
+rc++
+MsgBox template
+vos += 50
+rc++
+MsgBox template
+vos += 50
+rc++
+return
+}
+
+
+/*
+>^f::
+loop 4
+{
+feeder()
+ident()
+sender()
+return
+}
+
+
+feeder(){
+feed := FileOpen("C:\Users\RonPa\Desktop\WFRelated\codez\QueueRLs.txt", "r")
+if isobject(feed)
+msgbox, file loaded
+Return
+}
+ident(){
+filereadline, line, feed, rc
+holder.push := strsplit(%line%," =")
+msgbox % holder[0] . "`n" . holder[1] . "`n" . holder[2]
+name := holder[rc]
+rc += 1
+vos += 50
+return
+}
+sender(){
+msgbox % name . "`n" . name
+}
+
+/*
+fileappend, template, newgui.txt
+return
+}
+template := % "Gui, Add, CheckBox, x10 y" . vos " w200 h40, " . name
+
+<^N::Msgbox syscheck
+
+/*
+
+!+c::input()
+
+input(){
+send ^a
+send ^c
+gui, new
+gui, add, edit, vname
+gui, add, button, default, Ok
+gui, show
+return
+}
+ButtonOk:
+gui, submit
+gui, hide
+output()
+guiescape:
+guiclose:
+return
+
+
+output(){
+line := name . " = " . clipboard "`n"
+FileAppend, %line%, generalqueue.wmc
+return
+}
+
+template := Gui, Add, CheckBox, x10 y%vos% w200 h40, %name%

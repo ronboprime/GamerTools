@@ -1,0 +1,47 @@
+global Freq := 433
+global DurB := 500
+global Left0 := "witty comment here"
+global useInpOne := "e"
+global Duration1 := 333
+
+tesRun(){
+setTimer, Action1, %Duration1%
+send %useInpOne%
+}
+Action1:
+send %useInpOne%
+return
+
+F6::ListHotKeys
+
+F3:: 
+Gui, New
+Gui, Color, Blue, Yellow
+Gui, Font, s20 w800 cred, Comic Sans MS
+Gui, Add, Text, , Frequency in Hz
+Gui, Add, Edit, vFreq, %Freq%
+Gui, Add, Text, , Duration in Ms
+Gui, Add, Edit, vDurB, %DurB%
+Gui, Add, Text, , Current string tied to Left Control Zero
+Gui, Add, Edit, w400 vLeft0, %Left0%
+Gui, Add, Text, , First Attempt at this...
+Gui, Add, Edit, w400 vuseInpOne, %useInpOne%
+Gui, Add, Text, , hope this works!
+Gui, Add, Edit, w400 vDuration1, %Duration1%
+Gui, Add, Button, default w80, Skoden
+Gui, Font, s6 w100, Comic Sans MS 
+Gui, Add, Button, w40, cancel
+Gui, Show, Autosize Center, Options
+return
+
+ButtonSkoden:
+gui, submit
+ButtonCancel:
+gui destroy
+return
+ 
+/*
+need to figure out how to automate this process, and have shit named out like enumeration. read MOAR!
+
+*/
+

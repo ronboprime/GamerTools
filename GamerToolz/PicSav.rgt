@@ -1,0 +1,57 @@
+;Picture Saver
+>!+p::picSav2()
+picSav2(){
+Run, C:\WINDOWS\system32\mspaint.exe
+sleep 200
+WinActivate, ahk_exe mspaint.exe
+pasSavOut()
+cloOut()
+return
+}
+
+<+p::picSav()
+picSav(){
+FormatTime, stamp ,  , dd MMM, at HH24 mm ss
+Run, C:\WINDOWS\system32\mspaint.exe
+sleep 200
+WinActivate, ahk_exe mspaint.exe
+pasSavOut()
+cloOut()
+WinShow %WFPD%
+return
+}
+
+pasSavOut(){
+FormatTime, stamp ,  , dd MMM, at HH-mm-ss
+send ^v
+sleep 125
+send ^+x
+sleep 125
+send ^s
+sleep 125
+send %stamp%
+sleep 125
+send {Enter}
+return
+}
+cloOut(){
+send {alt}
+sleep 125
+send f
+sleep 125
+send x
+sleep 50
+WinRestore cur
+return
+}
+
+>!,::Hanger()
+Hanger(){
+Send #+s
+#IfWinActive, ahk_ID WFPD
+OnClipboardChange("picSav", -1)
+sleep 20
+sleep 1000
+return                
+}
+#If

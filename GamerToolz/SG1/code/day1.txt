@@ -1,0 +1,21 @@
+#include <windows.h>
+
+LRESULT window_callback (
+    HWND window, UINT message,                               // This creates a procedure for windows to relay info to the game
+    WPARAM wParam, LPARAM lParam){                           // basically a pointer for the upcomgin game window to recieve information                                   
+return DefWindowProcA(window, message, wParam, lParam);}     //                                                        
+                                                             //                
+int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd){                                                                             
+                                                             //                
+WNDCLASSA window_class = {0};                                //                                             
+  window_class.style = CS_HREDRAW|CS_VREDRAW;                // sets us up for software rendering                                                                             
+  window_class.lpfnWndProc = window_callback;                // see where it's linked up with the procedure on top?
+  window_class.lpszClassName = "Game_Window_Class";          //                                                                 
+                                                             //                
+RegisterClassA(&window_class);                               // creating the class for the window to become
+                                                             // gave it a pointer to the 'template'                                            
+                                                             //
+HWND window = CreateWindowExA(0, window_class.lpszClassName, // creating a window, specifying it's class,                                                                              
+"Some Game1",WS_VISIBLE|WS_OVERLAPPEDWINDOW,CW_USEDEFAULT,   // name, how it looks, x starting position,
+CW_USEDEFAULT,1280,720, 0, 0, 0, 0);                         // y starting position, x width, y height, no parent, no menu, no instance, no lpvoid 
+}                                                            //                  

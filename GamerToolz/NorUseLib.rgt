@@ -1,0 +1,79 @@
+;Normal Use Library,  very much a work in progress
+;abilities                
+abi1:                     
+    send 1                    
+    return                    
+abi2:                     
+    send 2                    
+    return                    
+abi3:                     
+    send 3                    
+    return                    
+abi4:                     
+    send 4                    
+    return                    
+nrg:                       
+    send 6                    
+    return                    
+;attacks
+forAtk:                       
+    {                         
+    send {w down}             
+    send e                    
+    send {w up}               
+    }                         
+    return                    
+heaMel:                   
+    Click, middle             
+    return                    
+altFir:                     
+    Click, middle, Down       
+    Return                    
+mel:                        
+    Send e                    
+    Return                    
+sho:                        
+    Click, 3                  
+    Return                    
+shoHol:                       
+    Click, L, Down            
+    Return                    
+;movements
+jum:                         
+    Send {space}              
+    return                    
+turRig:                    
+    MouseMove, 2, 0, , R      
+    return                    
+turLef:                     
+    MouseMove, 2, 0, , R      
+    return                    
+movFor:                      
+    send {w down}             
+    return                  
+movBac:
+    send {s down}
+    return  
+movRig:                    
+    send {d down}             
+    return                    
+movLef:                     
+    send {a down}             
+    return                    
+mov1(){                    
+    SetTimer, movFor, 1000   
+    send {w down}             
+    Return                    
+}                             
+mov2(){                    
+    setTimer, movRig, 1200 
+    return                    
+}                             
+tur3(){                   
+    setTimer, turRig, 720  
+    return                    
+}                             
+tur4(){                   
+    setTimer, turLef, 480   
+    return                    
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "ahkdbg",
+      "request": "launch",
+      "name": "AHKDebug",
+      "program": "${workspaceRoot}/${fileBasename}",
+      "stopOnEntry": true,
+      "captureStreams": true,
+      "AhkExecutable": "X:\\autHotKey\\AutoHotkey.exe",
+      "port": 9005
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+global DuaHat := DuaHat[]
+DuaHat := {WFAS: WFAS(), CBAS: CBAS(), CAS: CAS(), Trick: Trick()}
+
+F3::
+Gui, New
+Gui, Font, S18 CDefault, comic sans MS
+Gui, Add, Text, x30 y20 w200 h40 , What shall spool up?
+Gui, Add, CheckBox, x40 y70 w170 h40 checked1 vWFAS, Warframe?
+Gui, Add, CheckBox, x40 y120 w170 h40 vCBAS, Closed Beta?
+Gui, Add, CheckBox, x40 y170 w170 h40 vCAS, Code?
+Gui, Add, Button, x210 y320 w190 h50 Default, Ok
+Gui, Add, Edit, x220 y70 r3 vMyEdit w140, JukeBox Coming Soon! 
+Gui, Add, CheckBox, x40 y220 w170 h40 gTrick1, reserved
+Gui, Add, CheckBox, x40 y270 w170 h40 vTrick, reserved
+Gui, Font, S6 , CDefault, Verdana
+Gui, Add, Button, x0 y340 w100 h30 , fuggit
+Gui, Show, xCenter yCenter w400 h380, Optional Start Sequences
+Return
+
+F2::
+msgbox % "number 3 is " func.name
+if isobject(Trick1)
+msgbox Si!
+return
+
+Trick1:
+Msgbox Keep Your Hands to Yourself Mother Fucker!
+return
+
+ButtonTrick:
+Trick()
+return
+
+ButtonSkoden:
+Gui, Submit
+gui hide
+return
+
+Buttonfuggit:
+GuiEscape:
+GuiClose:
+Gui Destroy
+return
+
+;for index, value in DuaHat
+;while DuaHat[index] > 0
+
+WFAS(){
+msgbox whoa
+ }
+CBAS(){
+msgbox 2
+ }
+CAS(){
+msgbox 3
+}
+Trick(){
+msgbox 4
+ }
+
+
+/*
+WFAS(){                                        
+Run steam://rungameid/230410
+WinWaitActive, ahk_exe Launcher.exe
+sleep 10000
+click, 760, 590
+sleep 40000
+#Include C:\Users\RonPa\Desktop\WFRelated\codez\pers.ro
+send %UserPW%
+sleep 100
+send {Enter}
+WFAS := 0
+return
+}
+
+CAS(){
+send ^#{right}
+sleep 500
+send ^#{right}
+sleep 500
+run, C:\Users\RonPa\AppData\Local\Discord\app-0.0.308\Discord.exe
+sleep 2500
+sleep 1500
+send ^#{left}
+run, G:\Microsoft VS Code\Code.exe
+CAS := 0
+return
+}
+
+CBAS(){
+SetWorkingDir G:\.publix\GamerToolz\New
+run G:\.publix\GamerToolz\New\ClosedBeta.ahk
+CBAS := 0
+return
+}
+
+Trick(){
+msgbox Don't touch me there!
+Trick := 0
+return
+}

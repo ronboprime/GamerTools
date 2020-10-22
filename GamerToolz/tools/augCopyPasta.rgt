@@ -1,0 +1,37 @@
+#singleinstance force 
+global SelAll
+global NameOfListACP
+global EndFileDestACP
+
+name :=0
+
+!+c::input()         ;augmented copypasta, names and appends whatever is on 
+                         ;clipboard to a file chosen, or created if !exist
+input(){
+send ^c    
+gui, new
+gui, add, edit, vNameOfListACP, Name to be given
+gui, add, edit, vEndFileDestACP, file to append
+gui, add, button, default, Ok
+gui, add, checkbox, xcenter+100 r3 h200 vSelAll, Add optional "select all" command before copying?
+gui, show
+return
+}
+
+ButtonOk:
+gui, submit
+gui, hide
+output()
+return
+
+GuiEscape:
+GuiClose:
+Return
+
+
+output(){
+line := NameOfListACP . " = " . clipboard "`n"
+appendee := EndFileDestACP . ".rgts"
+FileAppend, %line%, %appendee%
+return
+}

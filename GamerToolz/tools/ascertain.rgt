@@ -1,0 +1,7 @@
+;getting closer!
+
+ascertain(){
+WPID := winexist("A")
+WinSet, AlwaysOnTop, on, ahk_PID WPID
+fileappend, %WPID%, C:\users\ronbo\desktop\Gamertoolz\settings.rgt
+}
