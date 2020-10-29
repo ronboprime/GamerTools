@@ -1,0 +1,29 @@
+;DJCopPas
+#IfWinExist, #dj - Discord
+^+c::DJCP()
+#if
+
+DJCP(){
+send ^a
+sleep 200
+send ^c 
+sleep 200
+WinActivate, #dj - Discord
+sleep 200
+send {Enter}
+sleep 200
+send {raw}!playtop 
+sleep 60
+send {space}
+sleep 60
+send ^v
+sleep 100
+Send {Enter}
+sleep 100
+send {raw}!shuffle
+sleep 60
+send {Enter}
+sleep 100
+send !{tab}
+return
+}

@@ -1,0 +1,175 @@
+;Normal Use Library,  very much a work in progress
+;abilities                
+
+abi1:                     
+    send 1                    
+    return                    
+abi2:                     
+    send 2                    
+    return                    
+abi3:                     
+    send 3                    
+    return                    
+abi4:                     
+    send 4                    
+    return                    
+nrg:                       
+    send 6                    
+    return                    
+;attacks
+forAtk:                       
+    {                         
+    send {w down}             
+    send e                    
+    send {w up}               
+    }                         
+    return                    
+heaMel:                   
+    Click, middle             
+    return                    
+altFir:                     
+    Click, middle, Down       
+    Return                    
+mel:                        
+    Send e                    
+    Return                    
+sho:                        
+    Click, 3                  
+    Return                    
+shoHol:                       
+    Click, L, Down            
+    Return                    
+;movements
+jum:                         
+    Send {space}              
+    return                    
+turRig:                    
+    MouseMove, 2, 0, , R      
+    return                    
+turLef:                     
+    MouseMove, 2, 0, , R      
+    return                    
+movFor:                      
+    send {w down}             
+    return                  
+movBac:
+    send {s down}
+    return  
+movRig:                    
+    send {d down}             
+    return                    
+movLef:                     
+    send {a down}             
+    return                    
+mov1(){                    
+    SetTimer, movFor, 1000   
+    send {w down}             
+    Return                    
+}                             
+mov2(){                    
+    setTimer, movRig, 1200 
+    return                    
+}                             
+tur3(){                   
+    setTimer, turRig, 720  
+    return                    
+}                             
+tur4(){                   
+    setTimer, turLef, 480   
+    return                    
+}
+;------------------------------premade--------------------------------------
+ESONew(){                     
+    SetTimer, del1, -25     
+    SetTimer, del2, -50     
+    SetTimer, del3, -75     
+    Return                    
+}                             
+ESO(){                        
+    Send e                    
+    SetTimer, heaMel, 1100
+    SetTimer, movFor, 2400   
+    SetTimer, turRig, 5150 
+    return                    
+}                             
+Saryn(){                      
+    SetTimer, abi1, 540   
+    SetTimer, abi4, 11000 
+    return                    
+}                             
+Strophdeemer(){               
+    SetTimer, mel, 1200     
+    Sleep 700                 
+    SetTimer, ForAtk, 1200    
+    return                    
+}                             
+VentKids(){                   
+    mov2()                 
+    tur4()                
+    settimer, jum, 144                
+}                             
+Octavia(){                    
+    settimer, oct1, -1000 
+    send 1                    
+    settimer, oct2, -3000 
+    send 2                    
+    settimer, oct3, -5000 
+    send 3                    
+    return                    
+}                             
+Khora(){                      
+    SetTimer, abi4, 30000 
+    send 4                    
+    SetTimer, nrg, 124000  
+    send 6                    
+    SetTimer, abi1, 2800  
+    send 1                    
+    return                    
+}                             
+Chroma(){                     
+    SetTimer, abi3, 35000 
+    Send 3                    
+    return                    
+}                             
+Adaro(){                      
+    SetTimer, abi2, 200    
+    send 2                    
+    Return                    
+}             
+Panthera(){                   
+    SetTimer, altFir, 10004 
+    return                    
+}                                                         
+Shedu(){                      
+    SetTimer, sho, 240      
+    return                
+}
+FiveSec(){                    
+    SetTimer, abi2, 5000   
+    send 2                    
+    return                    
+}                             
+TenSec(){                     
+    SetTimer, abi4, 10000  
+    send 4                    
+    return                    
+}  
+del1:                       
+    SetTimer, sho, 300      
+    Return                    
+del2:                       
+    SetTimer, movFor, 5000   
+    Send {w down}             
+    Return                    
+del3:                       
+    SetTimer, turLef, 1000  
+    Return                    
+oct1:                     
+    SetTimer, abi1, 35000 
+    return                    
+oct2:                     
+    SetTimer, abi2, 35000 
+    return                    
+oct3:                     
+    SetTimer, abi3, 35000 
+    return                    

@@ -1,0 +1,49 @@
+;Picture Saver
+
+#IfWinActive, Warframe
+>!,::Hanger()
+Hanger(){
+newclip := ""
+clipboard := newclip
+Send #+s
+clipwait, , 1
+picSav()
+return                
+}
+#If
+
+!+p::picSav()
+picSav(){
+Run, C:\WINDOWS\system32\mspaint.exe
+sleep 200
+WinActivate, ahk_exe mspaint.exe
+pasSavOut()
+return
+}
+
+pasSavOut(){
+FormatTime, stamp ,  , dd MMM, at HH-mm-ss
+send ^v
+sleep 150
+send ^+x
+sleep 150
+send ^s
+sleep 150
+send %stamp%
+sleep 150
+send {Enter}
+sleep 100
+cloOut()
+return
+}
+
+cloOut(){
+send {alt}
+sleep 150
+send f
+sleep 150
+send x
+sleep 150
+send !{Tab}
+return
+}

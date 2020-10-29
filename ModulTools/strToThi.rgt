@@ -1,0 +1,44 @@
+;// string To thing
+f2::
+vOffSet := 10
+hOffSet := 10
+lCount := 1
+Loop 10{
+FileReadLine, line, QueueRLs.rgts, lCount
+TestString := line 
+word_array := StrSplit(TestString," ", "=") 
+template := "Gui, Add, CheckBox, x10 y" . vOffSet . " w200 h40 g" . word_array[1] . ", " . word_array[1] . " "
+FileAppend, %template%`n, something.txt
+lCount += 1
+vOffSet += 60
+}
+loop 10{
+FileReadLine, line, QueueRLs.rgts, lCount
+TestString := line
+word_array := StrSplit(TestString," ", "=") 
+template := "Gui, Add, CheckBox, x80 y" . vOffSet . " w200 h40 g" . word_array[1] . ", " . word_array[1] . " "
+FileAppend, %template%`n, something.txt
+lCount += 1
+vOffset += 60
+}
+loop 10{
+FileReadLine, line, QueueRLs.rgts, lCount
+TestString := line
+word_array := StrSplit(TestString," ", "=") 
+template := "Gui, Add, CheckBox, x150 y" . vOffSet . " w200 h40 g" . word_array[1] . ", " . word_array[1] . " "
+FileAppend, %template%`n, something.txt
+lCount += 1
+vOffset += 60
+}
+loop 10{
+FileReadLine, line, QueueRLs.rgts, lCount
+TestString := line
+word_array := StrSplit(TestString," ", "=") 
+template := "Gui, Add, CheckBox, x230 y" . vOffSet . " w200 h40 g" . word_array[1] . ", " . word_array[1] . " "
+FileAppend, %template%`n, something.txt
+lCount += 1
+vOffset += 60
+}
+return
+/*
+
